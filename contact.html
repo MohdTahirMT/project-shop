@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/all.min.css" />
+  </head>
+  <body>
+    <div class="container" id="container">
+      <!-- <div class="form-container"> -->
+      <form id="contactUs" action="#">
+        <h1>Contact Us</h1>
+        <input required type="text" id="nameC" placeholder="Name" />
+        <input required type="email" id="emailC" placeholder="Email" />
+        <input required type="text" id="mobileC" placeholder="Mobile" />
+        <textarea required id="messageC" cols="30" rows="10"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <!-- </div> -->
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+      const thisFormC = document.getElementById("contactUs");
+      thisFormC.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        var name = $("#nameC").val();
+        var email = $("#emailC").val();
+        var mobile = $("#mobileR").val();
+        var message = $("#messageC").val();
+
+        Swal.fire("Yeah", "Successfully Contacted!", "success");
+        setTimeout(() => {
+          window.location.href = "/home.html";
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>
